@@ -1,0 +1,19 @@
+.italic {
+  font-style: italic;
+}
+
+.txt_none {
+  text-decoration: none;
+}
+
+.txt_underline {
+  text-decoration: underline;
+}
+
+.txt_overline {
+  text-decoration: overline;
+}
+
+.txt_linethrough {
+  text-decoration: line-through;
+}

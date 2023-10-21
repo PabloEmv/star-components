@@ -1,0 +1,91 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
+import { Button } from './Button'
+
+const meta = {
+  title: 'Components/Button',
+  component: Button,
+  parameters: {
+    layout: 'centered'
+  },
+  tags: ['autodocs']
+} satisfies Meta<typeof Button>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const DefaultButton: Story = {
+  args: {
+    children: 'Hello world'
+  }
+}
+
+export const BlueButton: Story = {
+  args: {
+    children: 'Hello world',
+    bgColor: 'blue_600',
+    borderColor: 'blue_200',
+    fontFamily: 'poppins',
+    hovBgColor: 'error_600'
+  }
+}
+
+export const ButtonXs: Story = {
+  args: {
+    children: 'Hello world',
+    bgColor: 'pink_600',
+    borderColor: 'pink_200',
+    fontFamily: 'poppins',
+    size: 'xs'
+  }
+}
+
+export const ButtonSm: Story = {
+  args: {
+    children: 'Hello world',
+    bgColor: 'pink_600',
+    borderColor: 'pink_200',
+    fontFamily: 'poppins',
+    size: 'sm'
+  }
+}
+
+export const ButtonLg: Story = {
+  args: {
+    children: 'Hello world',
+    bgColor: 'pink_600',
+    borderColor: 'pink_200',
+    fontFamily: 'poppins',
+    size: 'md'
+  }
+}
+
+export const ButtonXl: Story = {
+  args: {
+    children: 'Hello world',
+    bgColor: 'pink_600',
+    borderColor: 'pink_200',
+    fontFamily: 'poppins',
+    size: 'lg'
+  }
+}
+
+export const Button2Xl: Story = {
+  args: {
+    children: 'Hello world',
+    bgColor: 'pink_600',
+    borderColor: 'pink_200',
+    fontFamily: 'poppins',
+    size: 'xl'
+  }
+}
+
+export const Button3Xl: Story = {
+  args: {
+    children: 'Hello world',
+    bgColor: 'pink_600',
+    borderColor: 'pink_200',
+    fontFamily: 'poppins',
+    size: 'xl'
+  }
+}

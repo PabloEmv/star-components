@@ -1,0 +1,504 @@
+@import url(./styles/fonts.css);
+@import url(./styles/bordercolors.css);
+@import url(./styles/fontcolors.css);
+@import url(./styles/backgroundcolors.css);
+@import url(./styles/textstyles.css);
+@import url(./styles/cursor.css);
+
+:root {
+  --gray-025: #fcfcfd;
+  --gray-50: #f9fafb;
+  --gray-100: #f2f4f7;
+  --gray-200: #eaecf0;
+  --gray-300: #d0d5dd;
+  --gray-400: #98a2b3;
+  --gray-500: #667085;
+  --gray-600: #475467;
+  --gray-700: #344054;
+  --gray-800: #1d2939;
+  --gray-900: #101828;
+
+  --brand-025: #fcfaff;
+  --brand-50: #f9f5ff;
+  --brand-100: #f4ebff;
+  --brand-200: #e9d7fe;
+  --brand-300: #d6bbfb;
+  --brand-400: #b692f6;
+  --brand-500: #9e77ed;
+  --brand-600: #7f56d9;
+  --brand-700: #6941c6;
+  --brand-800: #53389e;
+  --brand-900: #42307d;
+
+  --error-025: #fffbfa;
+  --error-50: #fef3f2;
+  --error-100: #fee4e2;
+  --error-200: #fecdca;
+  --error-300: #fda29b;
+  --error-400: #f97066;
+  --error-500: #f04438;
+  --error-600: #d92d20;
+  --error-700: #b42318;
+  --error-800: #912018;
+  --error-900: #7a271a;
+
+  --warning-025: #fffcf5;
+  --warning-50: #fffaeb;
+  --warning-100: #fef0c7;
+  --warning-200: #fedf89;
+  --warning-300: #fec84b;
+  --warning-400: #fdb022;
+  --warning-500: #f79009;
+  --warning-600: #dc6803;
+  --warning-700: #b54708;
+  --warning-800: #93370d;
+  --warning-900: #7a2e0e;
+
+  --success-025: #f6fef9;
+  --success-50: #ecfdf3;
+  --success-100: #d1fadf;
+  --success-200: #a6f4c5;
+  --success-300: #6ce9a6;
+  --success-400: #32d583;
+  --success-500: #12b76a;
+  --success-600: #039855;
+  --success-700: #027a48;
+  --success-800: #05603a;
+  --success-900: #054f31;
+
+  --bluegray-025: #fcfcfd;
+  --bluegray-50: #f8f9fc;
+  --bluegray-100: #eaecf5;
+  --bluegray-200: #d5d9eb;
+  --bluegray-300: #afb5d9;
+  --bluegray-400: #717bbc;
+  --bluegray-500: #4e5ba6;
+  --bluegray-600: #3e4784;
+  --bluegray-700: #363f72;
+  --bluegray-800: #293056;
+  --bluegray-900: #101323;
+
+  --bluelight-025: #f5fbff;
+  --bluelight-50: #f0f9ff;
+  --bluelight-100: #e0f2fe;
+  --bluelight-200: #b9e6fe;
+  --bluelight-300: #7cd4fd;
+  --bluelight-400: #36bffa;
+  --bluelight-500: #0ba5ec;
+  --bluelight-600: #0086c9;
+  --bluelight-700: #026aa2;
+  --bluelight-800: #065986;
+  --bluelight-900: #0b4a6f;
+
+  --blue-025: #f5faff;
+  --blue-50: #eff8ff;
+  --blue-100: #d1e9ff;
+  --blue-200: #b2ddff;
+  --blue-300: #84caff;
+  --blue-400: #53b1fd;
+  --blue-500: #2e90fa;
+  --blue-600: #1570ef;
+  --blue-700: #175cd3;
+  --blue-800: #1849a9;
+  --blue-900: #194185;
+
+  --indigo-025: #f5f8ff;
+  --indigo-50: #eef4ff;
+  --indigo-100: #e0eaff;
+  --indigo-200: #c7d7fe;
+  --indigo-300: #a4bcfd;
+  --indigo-400: #8098f9;
+  --indigo-500: #6172f3;
+  --indigo-600: #444ce7;
+  --indigo-700: #3538cd;
+  --indigo-800: #2d31a6;
+  --indigo-900: #2d3282;
+
+  --purple-025: #fafaff;
+  --purple-50: #f4f3ff;
+  --purple-100: #ebe9fe;
+  --purple-200: #d9d6fe;
+  --purple-300: #bdb4fe;
+  --purple-400: #9b8afb;
+  --purple-500: #7a5af8;
+  --purple-600: #6938ef;
+  --purple-700: #5925dc;
+  --purple-800: #4a1fb8;
+  --purple-900: #3e1c96;
+
+  --pink-025: #fef6fb;
+  --pink-50: #fdf2fa;
+  --pink-100: #fce7f6;
+  --pink-200: #fcceee;
+  --pink-300: #faa7e0;
+  --pink-400: #f670c7;
+  --pink-500: #ee46bc;
+  --pink-600: #dd2590;
+  --pink-700: #c11574;
+  --pink-800: #9e165f;
+  --pink-900: #851651;
+
+  --rose-025: #fff5f6;
+  --rose-50: #fff1f3;
+  --rose-100: #ffe4e8;
+  --rose-200: #fecdd6;
+  --rose-300: #fea3b4;
+  --rose-400: #fd6f8e;
+  --rose-500: #f63d68;
+  --rose-600: #e31b54;
+  --rose-700: #c01048;
+  --rose-800: #a11043;
+  --rose-900: #89123e;
+
+  --orange-025: #fffaf5;
+  --orange-50: #fff6ed;
+  --orange-100: #ffead5;
+  --orange-200: #fddcab;
+  --orange-300: #feb273;
+  --orange-400: #fd853a;
+  --orange-500: #fb6514;
+  --orange-600: #ec4a0a;
+  --orange-700: #c4320a;
+  --orange-800: #9c2a10;
+  --orange-900: #7e2410;
+}
+
+/* Text Size */
+.text_xs {
+  font-size: 0.75rem;
+  line-height: 1.1025rem;
+}
+
+.text_sm {
+  font-size: 0.875rem;
+  line-height: 1.025rem;
+}
+
+.text_md {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text_lg {
+  font-size: 1.1025rem;
+  line-height: 1.75rem;
+}
+
+.text_xl {
+  font-size: 1.025rem;
+  line-height: 1.875rem;
+}
+
+.text_2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text_3xl {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+}
+
+.text_4xl {
+  font-size: 2.025rem;
+  line-height: 2.75rem;
+}
+
+.text_5xl {
+  font-size: 3rem;
+  line-height: 3.75rem;
+}
+
+.text_6xl {
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+}
+
+.text_7xl {
+  font-size: 4.5rem;
+  line-height: 5.6025rem;
+}
+
+/* Font Weight */
+.font_100 {
+  font-weight: 100;
+}
+
+.font_200 {
+  font-weight: 200;
+}
+
+.font_300 {
+  font-weight: 300;
+}
+
+.font_400 {
+  font-weight: 400;
+}
+
+.font_500 {
+  font-weight: 500;
+}
+
+.font_600 {
+  font-weight: 600;
+}
+
+.font_700 {
+  font-weight: 700;
+}
+
+.font_800 {
+  font-weight: 800;
+}
+
+.font_900 {
+  font-weight: 900;
+}
+
+/* Border Radius by size */
+
+.br_none {
+  border-radius: 0px;
+}
+
+.br_xs {
+  border-radius: 2px;
+}
+
+.br_sm {
+  border-radius: 4px;
+}
+
+.br_md {
+  border-radius: 8px;
+}
+
+.br_lg {
+  border-radius: 12px;
+}
+
+.br_xl {
+  border-radius: 16px;
+}
+
+.br_2xl {
+  border-radius: 20px;
+}
+
+.br_3xl {
+  border-radius: 24px;
+}
+
+.br_4xl {
+  border-radius: 28px;
+}
+
+.br_5xl {
+  border-radius: 32px;
+}
+
+.br_full {
+  border-radius: 50%;
+}
+
+/* Corners for "xs" size (2px) */
+.br_xs_tl {
+  border-top-left-radius: 2px;
+}
+
+.br_xs_tr {
+  border-top-right-radius: 2px;
+}
+
+.br_xs_bl {
+  border-bottom-left-radius: 2px;
+}
+
+.br_xs_br {
+  border-bottom-right-radius: 2px;
+}
+
+/* Corners for "sm" size (4px) */
+.br_sm_tl {
+  border-top-left-radius: 4px;
+}
+
+.br_sm_tr {
+  border-top-right-radius: 4px;
+}
+
+.br_sm_bl {
+  border-bottom-left-radius: 4px;
+}
+
+.br_sm_br {
+  border-bottom-right-radius: 4px;
+}
+
+/* Corners for "md" size (8px) */
+.br_md_tl {
+  border-top-left-radius: 8px;
+}
+
+.br_md_tr {
+  border-top-right-radius: 8px;
+}
+
+.br_md_bl {
+  border-bottom-left-radius: 8px;
+}
+
+.br_md_br {
+  border-bottom-right-radius: 8px;
+}
+
+/* Corners for "lg" size (12px) */
+.br_lg_tl {
+  border-top-left-radius: 12px;
+}
+
+.br_lg_tr {
+  border-top-right-radius: 12px;
+}
+
+.br_lg_bl {
+  border-bottom-left-radius: 12px;
+}
+
+.br_lg_br {
+  border-bottom-right-radius: 12px;
+}
+
+/* Corners for "xl" size (16px) */
+.br_xl_tl {
+  border-top-left-radius: 16px;
+}
+
+.br_xl_tr {
+  border-top-right-radius: 16px;
+}
+
+.br_xl_bl {
+  border-bottom-left-radius: 16px;
+}
+
+.br_xl_br {
+  border-bottom-right-radius: 16px;
+}
+
+/* Corners for "2xl" size (20px) */
+.br_2xl_tl {
+  border-top-left-radius: 20px;
+}
+
+.br_2xl_tr {
+  border-top-right-radius: 20px;
+}
+
+.br_2xl_bl {
+  border-bottom-left-radius: 20px;
+}
+
+.br_2xl_br {
+  border-bottom-right-radius: 20px;
+}
+
+/* Corners for "3xl" size (24px) */
+.br_3xl_tl {
+  border-top-left-radius: 24px;
+}
+
+.br_3xl_tr {
+  border-top-right-radius: 24px;
+}
+
+.br_3xl_bl {
+  border-bottom-left-radius: 24px;
+}
+
+.br_3xl_br {
+  border-bottom-right-radius: 24px;
+}
+
+/* Corners for "4xl" size (28px) */
+.br_4xl_tl {
+  border-top-left-radius: 28px;
+}
+
+.br_4xl_tr {
+  border-top-right-radius: 28px;
+}
+
+.br_4xl_bl {
+  border-bottom-left-radius: 28px;
+}
+
+.br_4xl_br {
+  border-bottom-right-radius: 28px;
+}
+
+/* Corners for "5xl" size (32px) */
+.br_5xl_tl {
+  border-top-left-radius: 32px;
+}
+
+.br_5xl_tr {
+  border-top-right-radius: 32px;
+}
+
+.br_5xl_bl {
+  border-bottom-left-radius: 32px;
+}
+
+.br_5xl_br {
+  border-bottom-right-radius: 32px;
+}
+
+/* Border Width */
+.bw_xs {
+  border-width: 1px;
+}
+
+.bw_md {
+  border-width: 2px;
+}
+
+.bw_lg {
+  border-width: 3px;
+}
+
+.bw_xl {
+  border-width: 4px;
+}
+
+/* Button Sizes */
+.btn_xs {
+  font-size: 0.875rem;
+  height: 36px;
+  padding: 8px 14px;
+}
+
+.btn_sm {
+  font-size: 0.875rem;
+  height: 40px;
+  padding: 10px 16px;
+}
+
+.btn_md {
+  font-size: 1rem;
+  height: 44px;
+  padding: 10px 18px;
+}
+
+.btn_lg {
+  font-size: 1rem;
+  height: 48px;
+  padding: 12px 20px;
+}
+
+.btn_xl {
+  font-size: 1.125rem;
+  height: 60px;
+  padding: 16px 28px;
+}
