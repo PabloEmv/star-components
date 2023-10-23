@@ -16,20 +16,22 @@ type Story = StoryObj<typeof meta>
 
 export const ContainerRed: Story = {
   args: {
-    elementType: 'section',
+    variant: 'section',
     width: '300px',
     height: '300px',
     children: 'Hello world',
-    hovBgColor: 'bg_brand_600'
+    bgColor: 'error_400',
+    hovBgColor: 'brand_600'
   }
 }
 
 export const ContainerBlue: Story = {
   args: {
-    elementType: 'section',
+    variant: 'section',
     width: '300px',
     height: '300px',
     children: 'Hello world',
-    hovBgColor: 'bg_brand_600'
+    bgColor: 'blue_700',
+    hovBgColor: 'brand_600'
   }
 }

@@ -1,44 +1,61 @@
-import { CSSProperties, ReactNode, createElement } from 'react'
-import { textVariants } from '../../types/text'
+import { createElement, classNames, styles } from './textImports'
 import {
+  CSSProperties,
   Color,
   CursorStyles,
   FontSize,
+  MarginTypes,
+  PaddingTypes,
+  ReactNode,
   TextDecoration,
+  textVariants,
   fontFamily,
   fontWeight
-} from '../../types/types'
-import classNames from 'classnames'
+} from './textImports'
 import '../global.css'
 
 export interface TextProps {
   variant: textVariants
   className?: string
-  color?: Color
-  cursor?: CursorStyles
-  fontFamily?: fontFamily
-  fontSize?: FontSize
-  fontWeight?: fontWeight
-  italic?: boolean
+  customStyles?: {
+    color?: Color
+    cursor?: CursorStyles
+    fontFamily?: fontFamily
+    fontSize?: FontSize
+    fontWeight?: fontWeight
+    italic?: boolean
+    margin?: MarginTypes
+    padding?: PaddingTypes
+    textDecoration?: TextDecoration
+    textAlign?: 'left' | 'right' | 'center' | 'justify'
+  }
+  htmlFor?: string
   style?: CSSProperties
-  textDecoration?: TextDecoration
   children?: ReactNode
 }
 
 export const Text = ({
   variant,
   className,
-  color = 'gray_800',
-  cursor,
-  fontFamily,
-  fontSize,
-  fontWeight,
-  italic,
+  customStyles,
+  htmlFor,
   style,
-  textDecoration,
   children,
   ...restProps
 }: TextProps) => {
+  const {
+    color,
+    cursor,
+    fontFamily,
+    fontSize,
+    fontWeight,
+    italic,
+    margin = { marginAll: 'none' },
+    padding = { paddingAll: 'none' },
+    textDecoration,
+    textAlign
+  } = customStyles || {}
+
   const textClasses = classNames(
     className,
     color,
@@ -47,7 +64,22 @@ export const Text = ({
     fontSize && `text_${fontSize}`,
     fontWeight && `font_${fontWeight}`,
     italic && 'italic',
-    textDecoration && `txt_${textDecoration}`
+    textDecoration && `txt_${textDecoration}`,
+    styles[`text_align_${textAlign}`],
+    styles[`m_${margin?.marginAll}`],
+    styles[`mx_${margin?.marginX}`],
+    styles[`my_${margin?.marginY}`],
+    styles[`ml_${margin?.marginLeft}`],
+    styles[`mr_${margin?.marginRight}`],
+    styles[`mt_${margin?.marginTop}`],
+    styles[`mb_${margin?.marginBottom}`],
+    styles[`p_${padding?.paddingAll}`],
+    styles[`px_${padding?.paddingX}`],
+    styles[`py_${padding?.paddingY}`],
+    styles[`pl_${padding?.paddingLeft}`],
+    styles[`pr_${padding?.paddingRight}`],
+    styles[`pt_${padding?.paddingTop}`],
+    styles[`pb_${padding?.paddingBottom}`]
   )
 
   return createElement(
@@ -55,6 +87,7 @@ export const Text = ({
     {
       className: textClasses,
       style: { ...style },
+      htmlFor,
       ...restProps
     },
     children
