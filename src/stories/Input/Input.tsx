@@ -34,8 +34,8 @@ interface InputProps {
     focusColor?: Color
     borderFocusColor?: BorderColor
     backgroundFocusColor?: BackgroundColor
-    placeholder?: string
   }
+  placeholder?: string
   style?: CSSProperties
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
@@ -46,6 +46,7 @@ export const Input = ({
   id,
   name,
   type,
+  placeholder,
   onChange,
   style,
   ...restProps
@@ -64,7 +65,6 @@ export const Input = ({
     italic,
     margin,
     padding,
-    placeholder,
     textDecoration
   } = customStyles || {}
 

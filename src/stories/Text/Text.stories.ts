@@ -1,3 +1,4 @@
+import { FontSize } from './../../types/types'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Text } from './Text'
@@ -19,7 +20,9 @@ export const MainTitle: Story = {
     variant: 'h1',
     children:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, quisquam.',
-    fontSize: '2xl'
+    customStyles: {
+      fontSize: '2xl'
+    }
   }
 }
 
@@ -28,7 +31,9 @@ export const Subtitle: Story = {
     variant: 'h2',
     children:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, quisquam.',
-    fontSize: 'xl'
+    customStyles: {
+      fontSize: 'xl'
+    }
   }
 }
 
@@ -116,8 +121,10 @@ export const Code: Story = {
   args: {
     variant: 'code',
     children: 'function saludar() { alert("Hola, mundo!"); }',
-    fontSize: 'xs',
-    fontFamily: 'notosans',
-    color: 'blue_700'
+    customStyles: {
+      fontSize: 'xs',
+      fontFamily: 'notosans',
+      color: 'blue_700'
+    }
   }
 }

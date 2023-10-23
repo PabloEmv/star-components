@@ -32,9 +32,11 @@ export const InputEmail: Story = {
   args: {
     type: 'email',
     id: 'input-email',
-    borderColor: 'blue_300',
-    borderFocusColor: 'blue_500',
-    fontWeight: '600'
+    customStyles: {
+      borderColor: 'blue_300',
+      borderFocusColor: 'blue_500',
+      fontWeight: '600'
+    }
   }
 }
 
@@ -42,7 +44,9 @@ export const InputPassword: Story = {
   args: {
     type: 'password',
     id: 'input-password',
-    borderColor: 'error_300',
-    borderFocusColor: 'error_500'
+    customStyles: {
+      borderColor: 'error_300',
+      borderFocusColor: 'error_500'
+    }
   }
 }
