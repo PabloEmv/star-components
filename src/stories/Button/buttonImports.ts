@@ -1,27 +1,25 @@
-import { CSSProperties, ChangeEvent } from 'react'
+import { CSSProperties, MouseEvent, ReactNode } from 'react'
 import {
   BackgroundColor,
   BorderColor,
   Color,
   CornerRadius,
-  TextDecoration,
   fontFamily,
   fontWeight
 } from '../../types/types'
-import { useFocus } from '../../hooks/useFocus'
-import styles from './Input.module.css'
+import { useHover } from '../../hooks/useHover'
+import styles from './button.module.css'
 import classNames from 'classnames'
 
-export { useFocus, styles, classNames }
-
+export { useHover, styles, classNames }
 export type {
   CSSProperties,
-  ChangeEvent,
+  MouseEvent,
+  ReactNode,
   BackgroundColor,
   BorderColor,
   Color,
   CornerRadius,
-  TextDecoration,
   fontFamily,
   fontWeight
 }

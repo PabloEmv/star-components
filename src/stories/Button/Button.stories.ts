@@ -23,69 +23,35 @@ export const DefaultButton: Story = {
 export const BlueButton: Story = {
   args: {
     children: 'Hello world',
-    bgColor: 'blue_600',
-    borderColor: 'blue_200',
-    fontFamily: 'poppins',
-    hovBgColor: 'error_600'
+    customStyles: {
+      backgroundColor: 'blue_600',
+      borderColor: 'blue_200',
+      fontFamily: 'poppins',
+      hovBackgroundColor: 'error_600'
+    }
   }
 }
 
 export const ButtonXs: Story = {
   args: {
     children: 'Hello world',
-    bgColor: 'pink_600',
-    borderColor: 'pink_200',
-    fontFamily: 'poppins',
-    size: 'xs'
+    customStyles: {
+      backgroundColor: 'pink_600',
+      borderColor: 'pink_200',
+      fontFamily: 'poppins',
+      size: 'xs'
+    }
   }
 }
 
 export const ButtonSm: Story = {
   args: {
     children: 'Hello world',
-    bgColor: 'pink_600',
-    borderColor: 'pink_200',
-    fontFamily: 'poppins',
-    size: 'sm'
-  }
-}
-
-export const ButtonLg: Story = {
-  args: {
-    children: 'Hello world',
-    bgColor: 'pink_600',
-    borderColor: 'pink_200',
-    fontFamily: 'poppins',
-    size: 'md'
-  }
-}
-
-export const ButtonXl: Story = {
-  args: {
-    children: 'Hello world',
-    bgColor: 'pink_600',
-    borderColor: 'pink_200',
-    fontFamily: 'poppins',
-    size: 'lg'
-  }
-}
-
-export const Button2Xl: Story = {
-  args: {
-    children: 'Hello world',
-    bgColor: 'pink_600',
-    borderColor: 'pink_200',
-    fontFamily: 'poppins',
-    size: 'xl'
-  }
-}
-
-export const Button3Xl: Story = {
-  args: {
-    children: 'Hello world',
-    bgColor: 'pink_600',
-    borderColor: 'pink_200',
-    fontFamily: 'poppins',
-    size: 'xl'
+    customStyles: {
+      backgroundColor: 'pink_600',
+      borderColor: 'pink_200',
+      fontFamily: 'poppins',
+      size: 'sm'
+    }
   }
 }

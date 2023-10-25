@@ -8,9 +8,7 @@ import {
   CornerRadius,
   TextDecoration,
   fontFamily,
-  fontWeight,
-  MarginTypes,
-  PaddingTypes
+  fontWeight
 } from './inputImports'
 import '../global.css'
 
@@ -24,8 +22,6 @@ interface InputProps {
     fontFamily?: fontFamily
     fontWeight?: fontWeight
     italic?: boolean
-    margin?: MarginTypes
-    padding?: PaddingTypes
     textDecoration?: TextDecoration
     borderRadius?: CornerRadius
     borderColor?: BorderColor
@@ -56,15 +52,13 @@ export const Input = ({
     backgroundFocusColor,
     borderColor = 'gray_300',
     borderFocusColor = 'gray_400',
-    borderRadius = { radius: 'md' },
-    borderWidth = 'md',
+    borderRadius = { radius: 'sm' },
+    borderWidth = 'sm',
     color = 'gray_800',
     focusColor,
     fontFamily,
     fontWeight,
     italic,
-    margin,
-    padding,
     textDecoration
   } = customStyles || {}
 
@@ -92,10 +86,12 @@ export const Input = ({
     bottomRightRadius && `br_${bottomRightRadius}`,
     textDecoration && `txt_${textDecoration}`,
     isFocused && focusColor ? focusColor : color,
+    isFocused && borderFocusColor
+      ? `b_${borderFocusColor}`
+      : `b_${borderColor}`,
     isFocused && backgroundFocusColor
       ? `bg_${backgroundFocusColor}`
-      : `bg_${backgroundColor}`,
-    isFocused && borderFocusColor ? `b_${borderFocusColor}` : `b_${borderColor}`
+      : `bg_${backgroundColor}`
   )
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

@@ -32,6 +32,10 @@ interface ContainerProps {
       templateRows?: GridTemplateRows
       templateColumns?: GridTemplateColumns
     }
+    boxShadow?: {
+      shadowSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+      shadowColor?: 'gray-500' | 'error-500' | 'blue-500'
+    }
     alignItems?: AlignItems
     justifyContent?: JustifyContent
     gap?: '4' | '8' | '12' | '16' | '20' | '24' | '32' | '40' | '48' | '64'
@@ -63,6 +67,7 @@ export const Container = ({
   children,
   ...restProps
 }: ContainerProps) => {
+  let shadowSizeVariant: string = '3xl'
   const { isHovered, handleMouseEnter, handleMouseLeave } = useHover()
 
   const {
@@ -75,6 +80,7 @@ export const Container = ({
     fontFamily,
     color,
     hovColor,
+    boxShadow,
     backgroundColor,
     hovBackgroundColor,
     borderColor,
@@ -94,6 +100,41 @@ export const Container = ({
     bottomLeftRadius,
     bottomRightRadius
   } = borderRadius || {}
+
+  if (boxShadow) {
+    switch (boxShadow?.shadowSize) {
+      case 'xs':
+        shadowSizeVariant = '2px 0px'
+        break
+
+      case 'sm':
+        shadowSizeVariant = '3px 0px'
+        break
+
+      case 'md':
+        shadowSizeVariant = '8px -2px'
+        break
+
+      case 'lg':
+        shadowSizeVariant = '16px -4px'
+        break
+
+      case 'xl':
+        shadowSizeVariant = '24px -4px'
+        break
+
+      case '2xl':
+        shadowSizeVariant = '48px -12px'
+        break
+
+      case '3xl':
+        shadowSizeVariant = '64px -12px'
+        break
+
+      default:
+        break
+    }
+  }
 
   const containerClasses = classNames(
     className,
@@ -142,7 +183,10 @@ export const Container = ({
     variant,
     {
       className: containerClasses,
-      style: { ...style },
+      style: {
+        ...style,
+        boxShadow: `0 0 ${shadowSizeVariant} var(--${boxShadow?.shadowColor})`
+      },
       onMouseEnter: handleMouseEnter,
       onMouseLeave: handleMouseLeave,
       ...restProps

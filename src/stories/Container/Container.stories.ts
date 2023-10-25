@@ -34,7 +34,9 @@ export const ContainerBlue: Story = {
     variant: 'section',
     customStyles: {
       backgroundColor: 'blue_700',
-      hovBackgroundColor: 'brand_600'
+      hovBackgroundColor: 'brand_600',
+      borderWidth: 'xl',
+      borderRadius: { radius: 'md' }
     },
     style: {
       width: '300px',

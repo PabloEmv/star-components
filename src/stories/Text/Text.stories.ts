@@ -1,4 +1,3 @@
-import { FontSize } from './../../types/types'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Text } from './Text'

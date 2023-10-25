@@ -31,7 +31,11 @@ function App() {
             direction: 'column'
           },
           gap: '8',
-          borderWidth: 'lg'
+          borderWidth: 'lg',
+          boxShadow: {
+            shadowSize: '3xl',
+            shadowColor: 'blue-500'
+          }
         }}
         style={{
           width: '280px'

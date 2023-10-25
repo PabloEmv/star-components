@@ -1,57 +1,69 @@
-import { MouseEvent } from 'react'
-import { TextProps } from '../Text/Text'
+import { useHover, styles, classNames } from './buttonImports'
 import {
+  CSSProperties,
+  MouseEvent,
+  ReactNode,
   BackgroundColor,
   BorderColor,
   Color,
-  CornerRadius
-} from '../../types/types'
-import { useHover } from '../../hooks/useHover'
-import styles from './button.module.css'
-import classNames from 'classnames'
+  CornerRadius,
+  fontFamily,
+  fontWeight
+} from './buttonImports'
 import '../global.css'
 
-interface ButtonProps
-  extends Omit<TextProps, 'variant' | 'fontSize' | 'cursor'> {
+interface ButtonProps {
   type?: 'submit' | 'reset' | 'button'
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-  bgColor?: BackgroundColor
-  borderColor?: BorderColor
-  borderRadius?: CornerRadius
-  hovColor?: Color
-  hovBgColor?: BackgroundColor
-  hovborderColor?: BorderColor
+  className?: string
+  customStyles?: {
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    color?: Color
+    fontFamily?: fontFamily
+    fontWeight?: fontWeight
+    italic?: boolean
+    backgroundColor?: BackgroundColor
+    borderColor?: BorderColor
+    borderRadius?: CornerRadius
+    hovColor?: Color
+    hovBackgroundColor?: BackgroundColor
+    hovborderColor?: BorderColor
+  }
+  style?: CSSProperties
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void
+  children?: ReactNode
 }
 
 export const Button = ({
   className,
   type = 'button',
-  bgColor = 'blue_600',
-  borderColor = 'blue_200',
-  borderRadius = { radius: 'md' },
-  color = 'white',
-  fontFamily,
-  fontWeight,
-  italic,
-  size = 'xs',
-  textDecoration,
-  hovColor,
-  hovBgColor,
-  hovborderColor,
+  customStyles,
   style,
   onClick,
   children,
   ...restProps
 }: ButtonProps) => {
   const { isHovered, handleMouseEnter, handleMouseLeave } = useHover()
+
+  const {
+    size = 'md',
+    color = 'white',
+    fontFamily,
+    fontWeight,
+    italic,
+    backgroundColor = 'blue_500',
+    borderColor = 'blue_200',
+    borderRadius = { radius: 'sm' },
+    hovColor = 'blue_500',
+    hovBackgroundColor = 'gray_100',
+    hovborderColor = 'blue_500'
+  } = customStyles || {}
   const {
     radius,
     topLeftRadius,
     topRightRadius,
     bottomLeftRadius,
     bottomRightRadius
-  } = borderRadius
+  } = borderRadius || {}
 
   const buttonClasses = classNames(
     className,
@@ -60,14 +72,15 @@ export const Button = ({
     fontWeight && `font_${fontWeight}`,
     italic && 'italic',
     size && `btn_${size}`,
-    textDecoration && `txt_${textDecoration}`,
     radius && `br_${radius}`,
     topLeftRadius && `br_${topLeftRadius}`,
     topRightRadius && `br_${topRightRadius}`,
     bottomLeftRadius && `br_${bottomLeftRadius}`,
     bottomRightRadius && `br_${bottomRightRadius}`,
     isHovered && hovColor ? hovColor : color,
-    isHovered && hovBgColor ? `bg_${hovBgColor}` : `bg_${bgColor}`,
+    isHovered && hovBackgroundColor
+      ? `bg_${hovBackgroundColor}`
+      : `bg_${backgroundColor}`,
     isHovered && hovborderColor ? `b_${hovborderColor}` : `b_${borderColor}`
   )
   return (
